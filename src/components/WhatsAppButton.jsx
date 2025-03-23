@@ -9,7 +9,7 @@ const WhatsAppButton = () => {
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1000);
-
+    
     // Ya no necesitamos el evento de scroll porque queremos que siempre sea visible
     
     return () => {

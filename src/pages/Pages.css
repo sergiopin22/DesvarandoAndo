@@ -76,16 +76,6 @@
   flex: 1;
 }
 
-.contact-info h2 {
-  color: var(--color-secondary);
-  margin-bottom: 1.5rem;
-}
-
-.contact-info p {
-  color: var(--color-secondary);
-  margin-bottom: 1.5rem;
-}
-
 .contact-methods {
   margin-top: 2rem;
 }
@@ -175,4 +165,4 @@
   .page-header p {
     font-size: 1rem;
   }
-}
+} 
