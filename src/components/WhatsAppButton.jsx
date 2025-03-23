@@ -5,17 +5,15 @@ const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    // Mostrar el botón después de un breve retardo para la animación de entrada
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
 
-    window.addEventListener('scroll', handleScroll);
+    // Ya no necesitamos el evento de scroll porque queremos que siempre sea visible
+    
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 

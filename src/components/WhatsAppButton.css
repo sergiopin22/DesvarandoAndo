@@ -1,66 +1,90 @@
 .whatsapp-floating-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 12px 20px;
   background-color: #25D366; /* Color verde de WhatsApp */
   color: white;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   font-weight: 600;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+  transform: scale(0.8);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 1000;
 }
 
 .whatsapp-floating-button.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 .whatsapp-floating-button svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .whatsapp-floating-button:hover {
   background-color: #128C7E; /* Color verde oscuro de WhatsApp al pasar el mouse */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px) scale(1.05);
 }
 
 .whatsapp-floating-button span {
-  font-size: 14px;
+  font-size: 16px;
 }
 
-/* Animación suave */
+/* Animación de pulsación */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    transform: scale(1);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    transform: scale(1.05);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1);
+  }
+}
+
+/* Animación de entrada */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
 .whatsapp-floating-button.visible {
-  animation: pulse 2s infinite;
+  animation: bounceIn 0.8s ease-out, pulse 2s infinite 1s;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
   .whatsapp-floating-button {
-    padding: 8px 12px;
+    padding: 14px 18px;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   }
   
   .whatsapp-floating-button span {
@@ -68,7 +92,11 @@
   }
   
   .whatsapp-floating-button svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .whatsapp-floating-button {
+    border-radius: 50%;
   }
 } 
