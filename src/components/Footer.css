@@ -1,0 +1,219 @@
+.footer {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+
+.footer-top {
+  padding: 4rem 0 2rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  height: 70px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.footer-section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.footer-section ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.method-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 1rem;
+  color: var(--color-primary);
+}
+
+.method-details a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.method-details a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--color-light);
+}
+
+.social-link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transform: translateY(-3px);
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.day {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hours {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.whatsapp-button a {
+  display: flex;
+  align-items: center;
+  color: var(--color-light);
+  background-color: #25d366;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button svg {
+  margin-right: 0.5rem;
+}
+
+.whatsapp-button a:hover {
+  background-color: #128c7e;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    margin-bottom: 1rem;
+  }
+} 

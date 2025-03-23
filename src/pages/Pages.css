@@ -1,0 +1,156 @@
+.page-container {
+  padding-top: 80px;
+}
+
+.page-header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Estilos para la página Acerca de Nosotros */
+.about-extra {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.about-extra h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  background-color: #f8fafc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.feature-item p {
+  color: #4b5563;
+}
+
+/* Estilos para la página de Contacto */
+.contact-content {
+  display: flex;
+  gap: 3rem;
+}
+
+.contact-info, .contact-form-container {
+  flex: 1;
+}
+
+.contact-methods {
+  margin-top: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.method-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: #f97316;
+}
+
+.method-details h3 {
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+.method-details p {
+  margin: 0;
+}
+
+.contact-form {
+  background-color: #f8fafc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+} 
