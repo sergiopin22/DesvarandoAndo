@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Footer.css';
 import logoImage from '../assets/images/logo_desvareadomiciliobogota.png';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const navigate = useNavigate();
+  
+  const handleNavigation = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <footer className="footer">
@@ -47,20 +53,20 @@ const Footer = () => {
             <div className="footer-section">
               <h3>Servicios</h3>
               <ul>
-                <li><Link to="/servicios/reinicio-bateria">Reinicio de Batería</Link></li>
-                <li><Link to="/servicios/cerrajeria">Cerrajería</Link></li>
-                <li><Link to="/servicios/cambio-llanta">Cambio de Llanta</Link></li>
-                <li><Link to="/servicios/paso-gasolina">Paso de Gasolina</Link></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios/reinicio-bateria'); }}>Reinicio de Batería</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios/cerrajeria'); }}>Cerrajería</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios/cambio-llanta'); }}>Cambio de Llanta</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios/paso-gasolina'); }}>Paso de Gasolina</a></li>
               </ul>
             </div>
             
             <div className="footer-section">
               <h3>Enlaces Rápidos</h3>
               <ul>
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/servicios">Servicios</Link></li>
-                <li><Link to="/nosotros">Nosotros</Link></li>
-                <li><Link to="/contacto">Contacto</Link></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/'); }}>Inicio</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios'); }}>Servicios</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/nosotros'); }}>Nosotros</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/contacto'); }}>Contacto</a></li>
               </ul>
             </div>
 

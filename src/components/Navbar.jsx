@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logoImage from '../assets/images/logo_desvareadomiciliobogota.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,10 +27,16 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleNavigation = (path) => {
+    setIsMenuOpen(false);
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={() => window.scrollTo(0, 0)}>
           <img src={logoImage} alt="Desvarese A Domicilio Bogotá" className="logo-image" />
         </Link>
         
@@ -42,10 +49,10 @@ const Navbar = () => {
         </div>
         
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
-          <li><Link to="/servicios" onClick={() => setIsMenuOpen(false)}>Servicios</Link></li>
-          <li><Link to="/nosotros" onClick={() => setIsMenuOpen(false)}>Nosotros</Link></li>
-          <li><Link to="/contacto" onClick={() => setIsMenuOpen(false)}>Contacto</Link></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/'); }}>Inicio</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/servicios'); }}>Servicios</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/nosotros'); }}>Nosotros</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/contacto'); }}>Contacto</a></li>
         </ul>
         
         <div className="contact-button">
