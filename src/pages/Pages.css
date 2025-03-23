@@ -3,9 +3,9 @@
 }
 
 .page-header {
-  background-color: #1e3a8a;
+  background-color: #fbff00;
   color: white;
-  padding: 3rem 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .contact-form {
-  background-color: #f8fafc;
+  background-color: #ffea00;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -153,4 +153,4 @@
   .page-header p {
     font-size: 1rem;
   }
-} 
+}

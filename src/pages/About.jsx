@@ -4,12 +4,6 @@ import './Pages.css';
 const About = () => {
   return (
     <div className="page-container">
-      <div className="page-header">
-        <div className="container">
-          <h1>Acerca de Nosotros</h1>
-          <p>Conoce más sobre nuestra empresa y experiencia en asistencia vehicular</p>
-        </div>
-      </div>
       <AboutSection />
       <div className="section">
         <div className="container">

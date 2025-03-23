@@ -32,13 +32,6 @@ const Contact = () => {
 
   return (
     <div className="page-container">
-      <div className="page-header">
-        <div className="container">
-          <h1>Contacto</h1>
-          <p>Comunícate con nosotros para solicitar nuestros servicios</p>
-        </div>
-      </div>
-      
       <section className="section">
         <div className="container">
           <div className="contact-content">
@@ -51,7 +44,7 @@ const Contact = () => {
                   <div className="method-icon">📱</div>
                   <div className="method-details">
                     <h3>Teléfono</h3>
-                    <p><a href="tel:3215139301">321 513 9301</a></p>
+                    <p className='contact-link'><a href="tel:3215139301">321 513 9301</a></p>
                   </div>
                 </div>
                 

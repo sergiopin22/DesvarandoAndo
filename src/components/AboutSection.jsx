@@ -1,5 +1,6 @@
 import './AboutSection.css';
 import TestimonialSlider from './TestimonialSlider';
+import aboutImage from '../assets/images/about-image.webp';
 
 const AboutSection = () => {
   return (
@@ -14,7 +15,7 @@ const AboutSection = () => {
           <div className="about-content">
             <div className="about-image">
               <div className="about-image-placeholder">
-                <img src="/src/assets/about-image.jpg" alt="" />
+                <img src={aboutImage} alt="Equipo de desvares a domicilio" />
               </div>
             </div>
             
