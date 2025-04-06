@@ -17,6 +17,7 @@
   --color-tertiary: #f0f0f0; /* Gris claro */
   --color-light: #ffffff;
   --color-dark: #111111;
+  --color-blue: #050f41;
   --color-accent: #FFD800;
   --color-text: #333333;
   --color-text-light: #ffffff;
@@ -70,8 +71,9 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #e6c300; /* Amarillo más oscuro */
-  transform: translateY(-2px);
+  background-color: var(--color-blue); /* Amarillo más oscuro */
+  color: var(--color-light);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
