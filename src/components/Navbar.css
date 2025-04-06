@@ -166,12 +166,12 @@
 
   /* Tamaño inicial del logo más pequeño en móvil */
   .logo-image {
-    height: 70px;
+    height: 100px;
   }
 
   /* Logo más grande al hacer scroll en móvil */
   .navbar.scrolled .logo-image {
-    height: 100px;
+    height: 110px;
   }
 
   .menu-button {
@@ -224,7 +224,7 @@
   
   /* Tamaño inicial del logo más pequeño en pantallas muy pequeñas */
   .logo-image {
-    height: 60px;
+    height: 80px;
   }
 
   /* Logo más grande al hacer scroll en pantallas muy pequeñas */
