@@ -12,7 +12,9 @@ function Hero() {
   
   const mobileStatsRef = useRef(null);
   const desktopStatsRef = useRef(null);
+  const heroImageRef = useRef(null); // Nuevo ref para la imagen
   const animationDone = useRef(false);
+  const imageAnimationDone = useRef(false); // Nuevo ref para controlar animación de imagen
 
   useEffect(() => {
     const options = {
@@ -21,7 +23,7 @@ function Hero() {
       threshold: 0.3
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observerStats = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !animationDone.current) {
           animationDone.current = true;
@@ -71,20 +73,45 @@ function Hero() {
       });
     }, options);
     
+    // Nuevo observer para la imagen
+    const observerImage = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !imageAnimationDone.current) {
+          imageAnimationDone.current = true;
+          // Añadir clase para activar animación
+          if (entry.target.classList.contains('floating-image')) {
+            entry.target.classList.add('animate-image');
+          }
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2 // Umbral menor para activar antes
+    });
+    
     if (mobileStatsRef.current) {
-      observer.observe(mobileStatsRef.current);
+      observerStats.observe(mobileStatsRef.current);
     }
     
     if (desktopStatsRef.current) {
-      observer.observe(desktopStatsRef.current);
+      observerStats.observe(desktopStatsRef.current);
+    }
+    
+    // Observar la imagen
+    if (heroImageRef.current) {
+      observerImage.observe(heroImageRef.current);
     }
     
     return () => {
       if (mobileStatsRef.current) {
-        observer.unobserve(mobileStatsRef.current);
+        observerStats.unobserve(mobileStatsRef.current);
       }
       if (desktopStatsRef.current) {
-        observer.unobserve(desktopStatsRef.current);
+        observerStats.unobserve(desktopStatsRef.current);
+      }
+      if (heroImageRef.current) {
+        observerImage.unobserve(heroImageRef.current);
       }
     };
   }, []);
@@ -160,7 +187,12 @@ function Hero() {
           </div>
           
           <div className="hero-image">
-            <img src={expertImg} alt="Mecánico experto" className="floating-image" />
+            <img 
+              ref={heroImageRef} 
+              src={expertImg} 
+              alt="Mecánico experto" 
+              className="floating-image"
+            />
           </div>
         </div>
       </div>
@@ -168,4 +200,4 @@ function Hero() {
   );
 }
 
-export default Hero; 
+export default Hero;
