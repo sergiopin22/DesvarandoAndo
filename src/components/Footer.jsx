@@ -27,7 +27,7 @@ const Footer = () => {
                     </svg>
                   </div>
                   <div className="method-details">
-                    <a href="tel:3215139301">321 513 9301</a>
+                    <a className="method-details_phone" href="tel:3215139301">321 513 9301</a>
                   </div>
                 </div>
               </div>
