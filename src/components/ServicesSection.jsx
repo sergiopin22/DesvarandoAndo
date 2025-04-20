@@ -5,7 +5,7 @@ const ServicesSection = () => {
   const services = [
     {
       id: 'reinicio-bateria',
-      icon: '🔋',
+      image: '/images/Reinicio-bateria-para-carros-en-bogota.webp',
       title: 'Reinicio de Batería',
       description: 'Cuando tu vehículo no enciende por problemas de batería, nuestros técnicos llegarán con jumper para pasar corriente, medirán el voltaje de la batería con voltímetro y reiniciarán el vehículo.',
       benefits: [
@@ -17,7 +17,7 @@ const ServicesSection = () => {
     },
     {
       id: 'cerrajeria',
-      icon: '🗝️',
+      image: '/images/Cerrajeria-para-carros-en-bogota.webp',
       title: 'Cerrajería',
       description: 'Si has perdido tus llaves o las has dejado dentro del vehículo, nuestros técnicos especializados realizarán la apertura utilizando un kit de herramientas adecuado, garantizando un servicio de calidad sin dañar tu carro.',
       benefits: [
@@ -29,7 +29,7 @@ const ServicesSection = () => {
     },
     {
       id: 'cambio-llanta',
-      icon: '🛞',
+      image: '/images/Cambio-llanta-en-bogota.webp',
       title: 'Cambio de Llanta',
       description: 'Ante un pinchazo, nuestro equipo llegará a asistir tu vehículo y realizará el cambio de la llanta afectada por el repuesto. Si es necesario, también realizamos el despinche en el sitio, contando con compresor y kit de despinche.',
       benefits: [
@@ -41,7 +41,7 @@ const ServicesSection = () => {
     },
     {
       id: 'paso-gasolina',
-      icon: '⛽',
+      image: '/images/Gasolina-a-domicilio-en-bogota.jpg',
       title: 'Paso de Gasolina',
       description: 'Si te has quedado sin combustible, contamos con galones adecuados para el transporte seguro de gasolina y técnicos especializados para asistir tu vehículo donde sea que te encuentres en la ciudad.',
       benefits: [
@@ -53,8 +53,7 @@ const ServicesSection = () => {
     },
     {
       id: 'venta-baterias',
-      icon: '🚘',
-      iconSvg: false,
+      image: '/images/Venta-de-baterias-para-carros-en-bogota.webp',
       title: 'Baterías Para Carro a Domicilio en Bogotá',
       description: 'Llevamos e instalamos tu batería para carro a domicilio sin costo adicional en 30 Min. Contamos con las mejores marcas y garantía directa del fabricante.',
       benefits: [
@@ -78,13 +77,7 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div className="service-item" key={service.id}>
               <div className="service-icon" data-service={service.id}>
-                {service.iconSvg ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M4 7v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2zm12.5 1h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm0 4h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM12 6a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 12 6z"/>
-                  </svg>
-                ) : (
-                  service.icon
-                )}
+                <img src={service.image} alt={service.title} className="service-img" />
               </div>
               <h3>{service.title}</h3>
               <p className="service-description">{service.description}</p>
@@ -134,4 +127,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection; 
+export default ServicesSection;
