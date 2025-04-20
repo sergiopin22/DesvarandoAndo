@@ -192,14 +192,17 @@
   flex-grow: 1;
 }
 
+/* Modificación para eliminar los puntos y dejar solo los checkmarks */
 .service-benefits {
   margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .service-benefits li {
   margin-bottom: 0.5rem;
   position: relative;
+  padding-left: 1.5rem;
   color: var(--color-text);
 }
 
@@ -207,7 +210,7 @@
   content: '✓';
   color: var(--color-primary);
   position: absolute;
-  left: -1.5rem;
+  left: 0;
   font-weight: bold;
 }
 
